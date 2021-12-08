@@ -14,10 +14,14 @@ st.set_page_config(layout="wide")
 st.balloons()
 st.title("Anhong Yang's Math10 Final Project")
 st.subheader('2021/12/05')
-st.markdown("[AnhongYang](https://github.com/Anhong-Yang) is a link to my Github")
 st.write("student ID:41845042")
+st.markdown("[This](https://github.com/Anhong-Yang/Math10) is the link to my repository, and the final project name is FP.py")
 st.markdown("The link for [Steam dataset](https://www.kaggle.com/connorwynkoop/steam-monthly-player-data/version/1)")
 st.markdown("The link for [Covid DS](https://www.kaggle.com/ifashion/covid-statistics)")
+st.subheader("Reference:")
+st.markdown("[This](https://stackoverflow.com/questions/44908383/how-can-i-group-by-month-from-a-date-field-using-python-pandas) is the code I used for grouping data by 'Month' in SteamDS")
+st.markdown("[This](https://discuss.streamlit.io/t/cannot-change-matplotlib-figure-size/10295/3) is the code I used for reshape the st.pyplot graph")
+
 st.header("My project is to find some relationship between Covid-19 infection and the number of online gamers")
 
 st.subheader("Covid-19 DS")
@@ -37,7 +41,7 @@ with Ccol1:
     Cov1
 with Ccol2:
     for i in range(20):
-        if i>1:
+        if i>=1:
             Cov1.iloc[i,4]=Cov1.iloc[i,2]-Cov1.iloc[i-1,2]
             Cov1.iloc[i,5]=Cov1.iloc[i,3]-Cov1.iloc[i-1,3]
         else:
@@ -82,7 +86,7 @@ Death9=regC2.predict([[578+30]]).round()
 st.subheader("the 'date_last' is how far we are from the end of 2020-01")
 st.write(f"The total case in 2021-09 is {Case9}, and total death is {Death9}")
 st.markdown("According to the [data](https://ourworldindata.org/explorers/coronavirus-data-explorer?tab=table&zoomToSelection=true&time=2021-09-30&facet=none&uniformYAxis=0&pickerSort=asc&pickerMetric=location&Metric=Confirmed+cases&Interval=Cumulative&Relative+to+Population=false&Align+outbreaks=false&country=~OWID_WRL), the total case is 234.21M and the total death is 4.78M,which are closed to our predict.")
-st.write("So I will my predict data for netural network first.")
+st.write("So I will predict my data in neural network first.")
 
 st.subheader("Stream player DS")
 if "df" not in st.session_state:
